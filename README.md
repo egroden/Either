@@ -1,1 +1,1 @@
-Either implementation
+Either implementation for kotlin
