@@ -1,1 +1,0 @@
-Either implementation for kotlin
