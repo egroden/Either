@@ -11,13 +11,6 @@ inline fun <T> either(f: () -> T): Either<Exception, T> =
         Either.Left(e)
     }
 
-suspend fun <T> either(f: suspend () -> T): Either<Exception, T> =
-    try {
-        Either.Right(f())
-    } catch (e: Exception) {
-        Either.Left(e)
-    }
-
 inline infix fun <A, B, C> Either<A, B>.map(f: (B) -> C): Either<A, C> = when(this) {
     is Either.Left -> this
     is Either.Right -> Either.Right(f(this.value))
